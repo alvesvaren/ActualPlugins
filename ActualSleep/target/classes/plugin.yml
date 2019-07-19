@@ -1,0 +1,4 @@
+name: ActualSleep
+version: 0.0.1-SNAPSHOT
+main: info.evla.actualsleep.actualsleep.ActualSleep
+api-version: 1.13

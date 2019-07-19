@@ -1,0 +1,4 @@
+name: ActualSleep
+version: ${project.version}
+main: info.evla.actualsleep.actualsleep.ActualSleep
+api-version: 1.13
