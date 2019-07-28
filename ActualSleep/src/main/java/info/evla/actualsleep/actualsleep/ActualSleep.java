@@ -11,7 +11,7 @@ public final class ActualSleep extends JavaPlugin {
         long startTime = System.nanoTime();
         // Plugin startup logic
         getServer().getPluginManager().registerEvents(sleepListener, this);
-        long duration = (System.nanoTime() - startTime)/1000000;
+        long duration = (System.nanoTime() - startTime)/10000;
         getLogger().info("Done! (" + duration + "ms)");
     }
 
