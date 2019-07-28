@@ -6,7 +6,7 @@
 
     <groupId>info.evla.actualsleep</groupId>
     <artifactId>ActualSleep</artifactId>
-    <version>0.1.0-BETA</version>
+    <version>0.2.0-BETA</version>
     <packaging>jar</packaging>
 
     <name>ActualSleep</name>
