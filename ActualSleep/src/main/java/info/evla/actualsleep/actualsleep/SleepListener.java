@@ -23,7 +23,7 @@ public class SleepListener implements Listener {
     {
         if (event.getBedEnterResult().equals(PlayerBedEnterEvent.BedEnterResult.OK)) {
             Bukkit.broadcastMessage(event.getPlayer().getDisplayName() + " is now sleeping, the sun will soon rise!");
-            Bukkit.getScheduler().scheduleSyncDelayedTask(this.plugin, () -> setToDay(event), 200L);
+            Bukkit.getScheduler().scheduleSyncDelayedTask(this.plugin, () -> setToDay(event), 100L);
         }
 
     }
