@@ -1,0 +1,39 @@
+name: ActualTeleport
+version: ${project.version}
+main: dev.alve.actualteleport.actualteleport.ActualTeleport
+api-version: 1.13
+authors: [alvesvaren]
+website: https://alve.dev/actualplugins
+
+commands:
+  bed:
+    description: Teleports you to your bed.
+    usage: /bed [player]
+    permission: actualteleport.bed
+  spawn:
+    description: Teleports you to the spawn.
+    usage: /spawn
+    permission: actualteleport.spawn
+  death:
+    description: Shows you your death location in chat.
+    usage: /death
+    permission: actualteleport.death
+
+permissions:
+  actualteleport.*:
+    description: Gives you all permissions for actual teleport
+    children:
+      actualteleport.bed: true
+      actualteleport.spawn: true
+      actualteleport.death: true
+
+  actualteleport.bed:
+    description: Teleports you to the spawn.
+    default: true
+  actualteleport.spawn:
+    description: Teleports you to the world spawn.
+    default: true
+  actualteleport.death:
+    description: Shows you the last death location in chat.
+    default: true
+
