@@ -6,12 +6,15 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.List;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public final class ActualTeleport extends JavaPlugin {
-    String[] commandNames = { "bed", "spawn", "death" };
+    String[] commandNames = { "bed", "spawn", "tpa", "tpyes", "debug" };
     Commands commands;
     Completer completer;
+
+    Map<UUID, Set<UUID>> tpaWaiters = new HashMap<>();
 
     @Override
     public void onEnable() {
@@ -32,5 +35,16 @@ public final class ActualTeleport extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+    public String serializeTpaWaiters() {
+        String result = "";
+        for (UUID toPlayer : tpaWaiters.keySet()) {
+            result += toPlayer.toString() + "(" + getServer().getPlayer(toPlayer).getName() + "): \n";
+            for (UUID fromPlayer : tpaWaiters.get(toPlayer)) {
+                result += "    " + fromPlayer.toString() + "(" + getServer().getPlayer(fromPlayer).getName() + ")\n";
+            }
+        }
+        return result;
     }
 }

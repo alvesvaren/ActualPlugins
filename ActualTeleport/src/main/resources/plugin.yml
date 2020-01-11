@@ -14,10 +14,22 @@ commands:
     description: Teleports you to the spawn.
     usage: /spawn
     permission: actualteleport.spawn
-  death:
-    description: Shows you your death location in chat.
-    usage: /death
-    permission: actualteleport.death
+  tpa:
+    description: Teleports you to another player.
+    usage: /tpa <player>
+    permission: actualteleport.tpa
+  tpyes:
+    description: Accepts any teleportation requests from <player>
+    usage: /tpyes <player>
+    aliases:
+      - tpy
+      - tpaccept
+      - tpallow
+    permission: actualteleport.tpa
+  debug:
+    description: debug
+    usage: /debug
+    permission: actualteleport.debug
 
 permissions:
   actualteleport.*:
@@ -26,14 +38,16 @@ permissions:
       actualteleport.bed: true
       actualteleport.spawn: true
       actualteleport.death: true
-
+      actualteleport.tpa: true
+  actualteleport.debug:
+    default: op
+    description: test
+  actualteleport.tpa:
+    description: Allows you to teleport to another player
+    default: true
   actualteleport.bed:
     description: Teleports you to the spawn.
     default: true
   actualteleport.spawn:
     description: Teleports you to the world spawn.
     default: true
-  actualteleport.death:
-    description: Shows you the last death location in chat.
-    default: true
-
