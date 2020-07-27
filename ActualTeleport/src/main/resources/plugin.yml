@@ -30,6 +30,10 @@ commands:
     description: debug
     usage: /debug
     permission: actualteleport.debug
+  back:
+    description: Return to the last position before you used an command from this plugin
+    usage: /back
+    permission: actualteleport.back
 
 permissions:
   actualteleport.*:
@@ -39,6 +43,7 @@ permissions:
       actualteleport.spawn: true
       actualteleport.death: true
       actualteleport.tpa: true
+      actualteleport.back: true
   actualteleport.debug:
     default: op
     description: test
@@ -50,4 +55,7 @@ permissions:
     default: true
   actualteleport.spawn:
     description: Teleports you to the world spawn.
+    default: true
+  actualteleport.back:
+    description: Allows you to undo your last teleport with this plugin
     default: true

@@ -23,23 +23,32 @@ public class Commands implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         boolean success = false;
+        boolean teleportationCommand = false;
         switch (command.getName()) {
             case "bed":
+                teleportationCommand = true;
                 success = onSlashBed(sender, command, label, args);
                 break;
             case "spawn":
+                teleportationCommand = true;
                 success = onSlashSpawn(sender, command, label, args);
                 break;
             case "tpa":
+                teleportationCommand = true;
                 success = onSlashTpa(sender, command, label, args);
                 break;
             case "tpyes":
+                teleportationCommand = false;
                 success = onSlashTpyes(sender, command, label, args);
                 break;
             case "debug":
+                teleportationCommand = false;
                 success = true;
                 sender.sendMessage(plugin.serializeTpaWaiters());
                 break;
+
+        }
+        if (success) {
 
         }
         return success;

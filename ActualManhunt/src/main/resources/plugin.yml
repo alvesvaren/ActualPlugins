@@ -1,0 +1,26 @@
+name: ActualManhunt
+version: ${project.version}
+main: dev.alve.manhunt.Manhunt
+api-version: 1.16
+prefix: ActualManhunt
+author: [alvesvaren]
+website: https://alve.dev/
+commands:
+  track:
+    description: Tracks a specified player
+    usage: /track <player>
+    permission: actualmanhunt.track
+  untrack:
+    description: Removed any tracking for the specified player
+    usage: /untrack
+    permission: actualmanhunt.track
+
+permissions:
+  actualmanhunt.*:
+    description: Gives you all permissions for actual manhunt
+    children:
+      actualteleport.track: true
+
+  actualteleport.track:
+    default: true
+    description: Allow a user to track and untrack people
