@@ -1,32 +1,24 @@
-package dev.alve.manhunt;
+package dev.alve.actualmanhunt;
 
 import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.attribute.Attribute;
 import org.bukkit.command.PluginCommand;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.CompassMeta;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.material.MaterialData;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.spigotmc.event.player.PlayerSpawnLocationEvent;
 
 import java.util.*;
 
-public final class Manhunt extends JavaPlugin implements Listener {
+public final class ActualManhunt extends JavaPlugin implements Listener {
     String[] commandNames = { "track", "untrack" };
 
     public HashMap<Player, HashSet<Player>> trackings = new HashMap<>();

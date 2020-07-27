@@ -1,4 +1,4 @@
-package dev.alve.manhunt;
+package dev.alve.actualmanhunt;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -10,9 +10,9 @@ import org.bukkit.inventory.ItemStack;
 import java.util.HashSet;
 
 public class ManhuntCommandExecutor implements CommandExecutor {
-    Manhunt plugin;
+    ActualManhunt plugin;
 
-    public ManhuntCommandExecutor(Manhunt plugin) {
+    public ManhuntCommandExecutor(ActualManhunt plugin) {
         this.plugin = plugin;
     }
 

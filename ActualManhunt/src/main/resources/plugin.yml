@@ -1,6 +1,6 @@
 name: ActualManhunt
 version: ${project.version}
-main: dev.alve.manhunt.Manhunt
+main: dev.alve.actualmanhunt.ActualManhunt
 api-version: 1.16
 prefix: ActualManhunt
 author: [alvesvaren]
@@ -19,8 +19,8 @@ permissions:
   actualmanhunt.*:
     description: Gives you all permissions for actual manhunt
     children:
-      actualteleport.track: true
+      actualmanhunt.track: true
 
-  actualteleport.track:
+  actualmanhunt.track:
     default: true
     description: Allow a user to track and untrack people

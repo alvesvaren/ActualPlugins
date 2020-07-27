@@ -10,8 +10,10 @@
       <list>
         <option value="$PROJECT_DIR$/ActualSleep/pom.xml" />
         <option value="$PROJECT_DIR$/ActualHomes/pom.xml" />
+        <option value="$PROJECT_DIR$/ActualManhunt/pom.xml" />
+        <option value="$PROJECT_DIR$/ActualTeleport/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="1.8 (2)" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>
