@@ -112,5 +112,7 @@ buildNumber.properties
 .classpath
 .project
 
+.attach_*
+
 # Common working directory
 run/
