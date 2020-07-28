@@ -3,6 +3,7 @@ package dev.alve.actualmanhunt;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
@@ -72,7 +73,7 @@ public final class ActualManhunt extends JavaPlugin implements Listener {
             if (event.getMaterial() == Material.COMPASS && (action == Action.RIGHT_CLICK_AIR || action == Action.RIGHT_CLICK_BLOCK)) {
                 Player player = null;
                 for (Player tmpPlayer : trackings.getOrDefault(event.getPlayer(), new HashSet<>())) {
-                    if (tmpPlayer.isDead()) {
+                    if (tmpPlayer.isDead() || tmpPlayer.getGameMode() == GameMode.SPECTATOR) {
                         continue;
                     }
                     if (player == null ||

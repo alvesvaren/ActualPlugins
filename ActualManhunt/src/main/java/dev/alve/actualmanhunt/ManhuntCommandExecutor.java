@@ -20,17 +20,28 @@ public class ManhuntCommandExecutor implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         switch (command.getName()) {
             case "track":
-                plugin.trackings.putIfAbsent((Player) sender, new HashSet<>());
-                Player playerToTrack = Bukkit.getPlayer(args[0]);
-                if (playerToTrack != null && playerToTrack.isOnline() && playerToTrack != sender) {
-                    plugin.trackings.get(sender).add(playerToTrack);
-                    if (!((Player) sender).getInventory().contains(Material.COMPASS)) {
-                        ((Player) sender).getInventory().addItem(new ItemStack(Material.COMPASS));
-                    }
-                    sender.sendMessage("§aNow tracking §r" + playerToTrack.getDisplayName());
-                } else {
-                    sender.sendMessage("§cThat player is not online, not a real player or yourself");
+                if (args.length < 1) {
+                    sender.sendMessage("§cYou need to specify at least one player to track");
                     return false;
+                }
+                boolean oneValid = false;
+                plugin.trackings.putIfAbsent((Player) sender, new HashSet<>());
+                for (String arg : args) {
+                    Player playerToTrack = Bukkit.getPlayer(arg);
+                    if (playerToTrack != null && playerToTrack.isOnline() && playerToTrack != sender) {
+                        plugin.trackings.get(sender).add(playerToTrack);
+
+                        sender.sendMessage("§aNow tracking §r" + playerToTrack.getDisplayName());
+                        oneValid = true;
+                    } else {
+                        sender.sendMessage("§cThat player is not online, not a real player or yourself");
+                    }
+                }
+                if (!oneValid) {
+                    return false;
+                }
+                if (!((Player) sender).getInventory().contains(Material.COMPASS)) {
+                    ((Player) sender).getInventory().addItem(new ItemStack(Material.COMPASS));
                 }
                 break;
             case "untrack":
